@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!---Coding By CoderGirl | www.codinglabweb.com--->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <div class="registration form">
+            <header>Manager Detials</header>
+            <form action="/admin/manager_edit/{{manager._id}}" method="post">
+                <label>Date</label>
+                <input type="text" name="joindate" value="{{manager.joindate}}">
+                <label>name</label>
+                <input type="text" name="name" value=" {{manager.name}}">
+                <label>username</label>
+                <input type="text" name="username" value=" {{manager.username}}">
+                <label>Category</label><br>
+                <select name="category" id="category">
+                    <option selected disabled>change {{manager.category}}</option>
+                    {{#each topics}}
+                    <option value="{{this.category}}">{{this.category}}</option>
+                    {{/each}}
+                </select>
+                <input type="submit" class="button" value="update">
+            </form>
+        </div>
+    </div>
+    <style>
+        /* Import Google font - Poppins */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            width: 100%;
+            background: #4070f4;
+            ;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 430px;
+            width: 100%;
+            background: #fff;
+            border-radius: 7px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+
+        .container .form {
+            padding: 2rem;
+        }
+
+        .form header {
+            font-size: 2rem;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .form input,
+        select {
+            height: 60px;
+            width: 100%;
+            padding: 0 15px;
+            font-size: 17px;
+            margin-bottom: 1.3rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .form input:focus {
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .form a {
+            font-size: 16px;
+            color: #4070f4;
+            ;
+            text-decoration: none;
+        }
+
+        .form a:hover {
+            text-decoration: underline;
+        }
+
+        .form input.button {
+            color: #fff;
+            background: green;
+            ;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-top: 1.7rem;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .form input.button:hover {
+            background: rgb(10, 73, 10);
+            ;
+        }
+
+        .signup {
+            font-size: 17px;
+            text-align: center;
+        }
+
+        .signup a {
+            color: #4070f4;
+            ;
+            cursor: pointer;
+        }
+
+        .signup a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: #4070f4;
+        }
+
+        h3 {
+            color: whitesmoke;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            background-color: #d4d2cd;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+            color: black;
+
+        }
+
+        .name:hover {
+            text-decoration: underline;
+            cursor: pointer
+        }
+
+        .button {
+            display: block;
+            width: 60px;
+            height: 20px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        #delete {
+            background-color: red;
+        }
+
+        #edit {
+            background-color: green;
+        }
+
+        #delete:hover {
+            background-color: rgb(173, 4, 4);
+        }
+
+        #edit:hover {
+            background-color: rgb(6, 105, 6);
+        }
+    </style>
+</head>
+
+<body>
+    {{#if managers}}
+    <h3>Managers</h3>
+
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>username</th>
+            <th>Category</th>
+            <th>Edit</th>
+            <th>Delete</th>
+
+        </tr>
+        <tr>
+            {{#each managers}}
+            <td>{{this.joindate}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.username}}</td>
+            <td>{{this.category}}</td>
+            <td><a href="/admin/manager_edit/{{this._id}}" class="button" id="edit">Edit</a></td>
+            <td><a href="/admin/manager_delete/{{this._id}}" class="button " id="delete">Delete</a></td>
+
+        </tr>
+        {{/each}}
+    </table>
+    {{else}}
+    <style>
+        body {
+            background-color: white;
+        }
+    </style>
+    <h2 style="text-align: center;padding-top:20%;color:gray">No Managers found</h2>
+    {{/if}}
+
+</body>
+
+</html>

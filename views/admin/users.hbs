@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="/public/javascript/script.js"></script>
+    <style>
+        body {
+            background-color: #4070f4;
+        }
+
+        h3 {
+            color: whitesmoke;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            background-color: #d4d2cd;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+            color: black;
+
+        }
+
+        .button {
+            display: block;
+            width: 60px;
+            height: 20px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        #delete {
+            background-color: red;
+        }
+
+
+
+        #delete:hover {
+            background-color: rgb(173, 4, 4);
+        }
+    </style>
+</head>
+
+<body>
+    {{#if users}}
+    <h3>Users</h3>
+
+    <table>
+        <tr>
+            <th>Joined date</th>
+            <th>Name</th>
+            <th>Email Address</th>
+            <th>Delete</th>
+        </tr>
+        <tr>
+            {{#each users}}
+            <td>{{this.joindate}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.email}}</td>
+            <td><a class="button" onclick="deletefunction()" id="delete">Delete</a></td>
+        </tr>
+        {{/each}}
+    </table>
+    {{else}}
+    <style>
+        body {
+            background-color: white;
+        }
+    </style>
+    <h2 style="text-align: center;padding-top:20%;color:gray">No users found</h2>
+    {{/if}}
+
+</html>

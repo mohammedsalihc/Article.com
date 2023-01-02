@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stylesheets/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo"><a href="#">Articles.com</a></div>
+            <ul class="nav-links">
+                <li><a href="/createblog">create blog</a></li>
+                <li><a href="#">Edit profile</a></li>
+                <li><a href="/myblogs">My blogs</a></li>
+                <li><a href="#">Contact</a></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li><a style="color: greenyellow;" href="">User: {{user.name}}</a></li>
+                <li><a href="/logout"><button style="background-color: red;">Logout</button></a></li>
+            </ul>
+
+
+        </div>
+    </nav>
+    <div class="container">
+        {{#each blogs}}
+        <div class="card">
+            <div class="card__body">
+                <span class="tag tag-blue">{{this.category}}</span>
+                <h4>{{this.title}}</h4>
+                <p style="color: gray;">{{this.description}}</p>
+                <p>{{this.message}}</p>
+            </div>
+            <div class="card__footer">
+                <div class="user">
+                    <img src="images/profile.png" alt="user__image" class="user__image">
+                    <div class="user__info">
+                        <h5>{{this.author}}</h5>
+                        <small>{{this.postdate}}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    </div>
+</body>
+
+
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!---Coding By CoderGirl | www.codinglabweb.com--->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<title>Login & Registration Form | CoderGirl</title>-->
+    <!---Custom CSS File--->
+    <link rel="stylesheet" href="stylesheets/signup.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="login form">
+            <header>Login</header>
+            <form action="/login" method="post">
+                {{#if error}}
+                <p style="color:red">email id or password is incorrect</p>
+                {{/if}}
+                <input type="text" name="email" placeholder="Enter your email" required>
+                <input type="password" name="password" placeholder="Enter your password" required>
+                <a href="/signup">New user?</a>
+                <input type="submit" class="button" value="Login">
+            </form>
